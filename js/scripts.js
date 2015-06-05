@@ -5,7 +5,8 @@ function Pizza(pizzaSize, pizzaTopping) {
 
 Pizza.prototype.cost = function() {
   var inputtedPizzaSize = $("select#pizza-size").val();
-  var inputtedPizzaTopping = parseInt($("input#pizza-topping").val());
+  var inputtedPizzaTopping = $("[type='checkbox']:checked").length;
+  // var inputtedPizzaTopping = parseInt($("input#pizza-topping").val());
   var inputtedPizzaQuantity = parseInt($("input#pizza-quantity").val());
   var baseCost = 10;
   var finalCost = 0;
