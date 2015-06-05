@@ -21,24 +21,16 @@ Pizza.prototype.cost = function() {
     finalCost += (inputtedPizzaTopping * 2) * inputtedPizzaQuantity;
     return finalCost;
   }
-  //  if (inputtedPizzaQuantity > 1) {
-  //   finalCost = finalCost * inputtedPizzaQuantity;
-  //   return finalCost;
-  // } else {
-  //   finalCost +=1;
-  //   return finalCost;
-  // }
 }
 
 $(document).ready(function() {
   $("form#pizza-form").submit(function(event){
   event.preventDefault();
   var inputtedPizzaSize = $(this).find("select#pizza-size").val();
-  var inputtedPizzaTopping = $(this).find("input#pizza-topping").val();
+  var inputtedPizzaTopping = $("[type='checkbox']:checked").length;
   var inputtedPizzaQuantity = $(this).find("input#pizza-quantity").val();
   var newPizza = new Pizza(inputtedPizzaSize, inputtedPizzaTopping);
   newPizza.price = newPizza.cost();
-  // newPizza.pizzaQuantity = inputtedPizzaQuantity;
   $("div#pizza").remove();
   $("div.container").append("<div id='pizza'>" + "<p>Pizza Size:  " +
                             newPizza.pizzaSize + "</p>" +
