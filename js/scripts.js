@@ -10,12 +10,12 @@ Pizza.prototype.cost = function() {
   var baseCost = 10;
   var finalCost = 0;
   if (inputtedPizzaSize === "large") {
-    finalCost = baseCost - 3;
+    finalCost = baseCost + 10;
   } else {
     finalCost = baseCost + 3;
   }
-  if (inputtedPizzaTopping > 3) {
-    finalCost -= 3;
+  if (inputtedPizzaTopping > 2) {
+    finalCost += inputtedPizzaTopping * 2;
     return finalCost;
   } else if (inputtedPizzaQuantity < 3) {
     finalCost -= 4;
