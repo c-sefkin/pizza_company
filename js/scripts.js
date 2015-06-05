@@ -11,6 +11,8 @@ Pizza.prototype.cost = function() {
   var finalCost = 0;
   if (inputtedPizzaSize === "large") {
     finalCost = (baseCost + 10) * inputtedPizzaQuantity;
+  } else if (inputtedPizzaSize === "medium") {
+    finalCost = (baseCost + 5) * inputtedPizzaQuantity;
   } else {
     finalCost = (baseCost + 3) * inputtedPizzaQuantity;
   }
@@ -35,10 +37,12 @@ $(document).ready(function() {
   var inputtedPizzaQuantity = $(this).find("input#pizza-quantity").val();
   var newPizza = new Pizza(inputtedPizzaSize, inputtedPizzaTopping);
   newPizza.price = newPizza.cost();
+  // newPizza.pizzaQuantity = inputtedPizzaQuantity;
   $("div#pizza").remove();
   $("div.container").append("<div id='pizza'>" + "<p>Pizza Size:  " +
                             newPizza.pizzaSize + "</p>" +
                             "<p>Toppings:  " + newPizza.pizzaTopping + "</p>" +
+                            "<p>Quantity:  " + inputtedPizzaQuantity + "</p>" +
                             "<p>Pizza Price:  $" + newPizza.price + "</p>" +
                             "</div>");
   });
