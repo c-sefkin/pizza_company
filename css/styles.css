@@ -1,0 +1,84 @@
+html {
+  height: 100%;
+}
+
+body {
+  /*background-image: url("../angela.gif");*/
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  text-align: center;
+  position: relative;
+  min-height: 100%;
+  font-family: 'Londrina Solid', cursive;}
+
+h1 {
+  color: #00761e;
+  font-size: 70px;
+}
+
+.trip {
+  cursor: pointer;
+  color: #0088cc;
+}
+
+.contact:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+  style: none;
+  font-size: 30px;
+  padding-left: 0px;
+}
+
+#show-trip {
+  display: none;
+}
+
+.trip-details {
+  color: #ffdf33;
+}
+
+li {
+  style: none;
+  margin-top: 0px;
+  text-align: left;
+  font-size: 20px;
+  padding-left: 0px;
+}
+
+.inputs {
+  float: right;
+  margin-top: 80px;
+}
+
+.btn-success {
+  background-color: #00761e;
+}
+
+.trip-column {
+  float: left;
+  margin-top: 80px;
+}
+
+p {
+  float: left;
+  text-align: left;
+}
+
+input#customer-age {
+  width: 200px;
+  margin: auto 40% auto 40%;
+}
+
+p, li, ul, h1, h2, form {
+  background-color: rgba(201,201,201,.6);
+  border: 3px solid black;
+  border-radius: 15px;
+  padding: 10px;
+}
