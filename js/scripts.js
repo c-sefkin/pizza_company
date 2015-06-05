@@ -10,20 +10,21 @@ Pizza.prototype.cost = function() {
   var baseCost = 10;
   var finalCost = 0;
   if (inputtedPizzaSize === "large") {
-    finalCost = baseCost + 10;
+    finalCost = (baseCost + 10) * inputtedPizzaQuantity;
   } else {
-    finalCost = baseCost + 3;
+    finalCost = (baseCost + 3) * inputtedPizzaQuantity;
   }
-  if (inputtedPizzaTopping > 2) {
-    finalCost += inputtedPizzaTopping * 2;
-    return finalCost;
-  } else if (inputtedPizzaQuantity < 3) {
-    finalCost -= 4;
-    return finalCost;
-  } else {
-    finalCost +=1;
+  if (inputtedPizzaTopping >= 1) {
+    finalCost += (inputtedPizzaTopping * 2) * inputtedPizzaQuantity;
     return finalCost;
   }
+  //  if (inputtedPizzaQuantity > 1) {
+  //   finalCost = finalCost * inputtedPizzaQuantity;
+  //   return finalCost;
+  // } else {
+  //   finalCost +=1;
+  //   return finalCost;
+  // }
 }
 
 $(document).ready(function() {
